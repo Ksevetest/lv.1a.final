@@ -29,7 +29,7 @@ public class ShoppingCart extends Common {
     private By paymentType = By.cssSelector("a[payment_type='CASH_INDIVIDUAL_PERSON']");
     private By paymentTab = By.cssSelector(".payment-type-tab");
 
-    // Order summary valiation
+    // Order summary validation
     private By productNameCheck = By.cssSelector(".ait-cart-item-info>h4>a");
     private By confirmationPrice = By.cssSelector("div:nth-child(1) > span.ait-cart-total-count");
     private By deliveryPrice = By.cssSelector("div:nth-child(2) > span.ait-cart-total-count");

@@ -19,9 +19,7 @@ public class Common {
 
 
     private By closePopUpButton = By.cssSelector(".close-button.animated");
-    private By popUp = By.cssSelector("#mt-551b28d16559693c");
-    private By popUpFrame = By.cssSelector("#mt-65cf2a318dbd5e21");
-
+    private By popUp = By.cssSelector(".mt-overlay > div > iframe");
     private By closeButton = By.cssSelector(".icon-slider-close");
     private By bottomBar = By.cssSelector(".mt-promo-bar iframe");
 
@@ -57,11 +55,6 @@ public class Common {
         wait.until(ExpectedConditions.visibilityOfElementLocated(element));
     }
 
-    protected void switchToFrame(By frame) {
-        WebDriverWait wait = new WebDriverWait(driver, 2);
-        wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(frame));
-    }
-
     protected void waitForClick(By element) {
         WebDriverWait wait = new WebDriverWait(driver, 5);
         wait.until(ExpectedConditions.elementToBeClickable(element));
@@ -81,7 +74,8 @@ public class Common {
     public void closePopup() {
         try {
             waitUntil(popUp);
-            switchToFrame(popUpFrame);
+            String bottomFrame = driver.findElement(popUp).getAttribute("id");
+            driver.switchTo().frame(bottomFrame);
             waitForClick(closePopUpButton);
             driver.findElement(closePopUpButton).click();
         } catch (Exception ignored) {
