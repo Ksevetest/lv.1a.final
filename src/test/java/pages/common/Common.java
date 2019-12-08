@@ -1,4 +1,4 @@
-package common;
+package pages.common;
 
 import model.Customer;
 import model.Product;

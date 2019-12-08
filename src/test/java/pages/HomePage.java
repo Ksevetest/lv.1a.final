@@ -1,7 +1,7 @@
 package pages;
 
 
-import common.Common;
+import pages.common.Common;
 import org.openqa.selenium.By;
 
 import static org.assertj.core.api.Assertions.assertThat;

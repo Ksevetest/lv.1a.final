@@ -1,31 +1,39 @@
 package pages;
 
 
-import common.Common;
+import pages.common.Common;
 import org.openqa.selenium.By;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class ShoppingCart extends Common {
 
+    // Buttons
     private By forwardButton = By.cssSelector(".order-form-forward-button");
     private By skipButton = By.cssSelector(".btn-v2");
+
+    // Customer
     private By firstName = By.cssSelector("#order_main_data_name");
     private By lastName = By.cssSelector("#order_main_data_surname");
     private By email = By.cssSelector("#order_main_data_email");
     private By phone = By.cssSelector("#order_main_data_contact_phone_number");
+
+    // Communication and agreements
     private By communication = By.cssSelector(".ui-button-icon");
     private By doNotEmailMe = By.cssSelector("#ui-id-2");
     private By agreement = By.cssSelector("#accept_purchase_agreement");
+
+    // Delivery and payment way
     private By deliveryType = By.cssSelector("article:nth-child(7)");
     private By deliveryContainer = By.cssSelector(".form-cols.predefined-delivery-address-container");
     private By paymentType = By.cssSelector("a[payment_type='CASH_INDIVIDUAL_PERSON']");
     private By paymentTab = By.cssSelector(".payment-type-tab");
+
+    // Order summary valiation
     private By productNameCheck = By.cssSelector(".ait-cart-item-info>h4>a");
     private By confirmationPrice = By.cssSelector("div:nth-child(1) > span.ait-cart-total-count");
     private By deliveryPrice = By.cssSelector("div:nth-child(2) > span.ait-cart-total-count");
     private By clientData = By.cssSelector(".col-1 > p");
-
 
     public void checkOutWithoutUser() {
         driver.findElement(forwardButton).click();

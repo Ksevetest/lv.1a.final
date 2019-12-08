@@ -1,7 +1,8 @@
 package pages;
 
-import common.Common;
+import pages.common.Common;
 import org.openqa.selenium.By;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class FilterPage extends Common {
@@ -23,7 +24,7 @@ public class FilterPage extends Common {
         assertThat(driver.findElement(queryResult).getText()).isEqualToIgnoringCase("Meklēšanas rezultāti: " + tag);
     }
 
-    public void pickBrand (){
+    public void pickBrand() {
         driver.findElement(itemList).click();
         closePopup();
         closeBottomBar();
@@ -31,7 +32,8 @@ public class FilterPage extends Common {
         clickOnHiddenElement(brandName);
         waitForInvisibilityOfElement(loader);
     }
-    public  void pickBestRated (){
+
+    public void pickBestRated() {
         waitUntil(productSortList);
         driver.findElement(productSortList).click();
         driver.findElement(mostStars).click();

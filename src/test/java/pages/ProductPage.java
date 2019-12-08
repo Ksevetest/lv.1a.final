@@ -1,6 +1,6 @@
 package pages;
 
-import common.Common;
+import pages.common.Common;
 import org.openqa.selenium.By;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -9,7 +9,7 @@ public class ProductPage extends Common {
 
     private By addToCard = By.cssSelector(".btn-cart");
     private By productInCart = By.cssSelector(".product-is-in-cart");
-    private By productName = By.cssSelector("div.product-main-info>h1");
+    private By productName = By.cssSelector(".product-main-info>h1");
     private By productPrice = By.cssSelector(".price-v2");
 
     public void setProductName() {
