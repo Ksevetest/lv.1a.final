@@ -44,6 +44,7 @@ public class WebOrderSteps {
     @And("adds most stared product in shopping cart")
     public void clientAddsMostStaredProductInShoppingCart() {
         filterPage.pickBestRated();
+        filterPage.selectBestRated();
     }
 
     @And("goes to delivery page")
