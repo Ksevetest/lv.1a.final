@@ -19,8 +19,8 @@ public class WebOrderSteps {
     @Given("client opens (.*) website")
     public void clientOpensWebsite(String website) {
         homePage.webPage(website);
-        homePage.closePopup();
         homePage.closeBottomBar();
+        homePage.closePopup();
         homePage.setCookies();
     }
 
