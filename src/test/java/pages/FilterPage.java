@@ -14,8 +14,6 @@ public class FilterPage extends Common {
     private By loader = By.cssSelector("#loader");
     private By productSortList = By.cssSelector(".select-add-info");
     private By mostStars = By.cssSelector(".drop-list li[rel='4']");
-    private By selectItem = By.cssSelector("img[alt='iRobot Roomba 980']");
-
 
     public void checkQueryResult(String tag) {
         closePopup();
@@ -38,6 +36,9 @@ public class FilterPage extends Common {
         driver.findElement(productSortList).click();
         driver.findElement(mostStars).click();
         waitForInvisibilityOfElement(loader);
-        driver.findElement(selectItem).click();
+    }
+
+    public  void selectBestRated (){
+        driver.findElement(By.cssSelector(".product-grid > section:nth-child(" + 1 + ") .p-image")).click();
     }
 }
