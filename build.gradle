@@ -10,6 +10,8 @@ repositories {
     mavenCentral()
 }
 
+
+
 dependencies {
     compile group: 'junit', name: 'junit', version: '4.12'
     compile group: 'org.assertj', name: 'assertj-core', version: '3.13.2'
@@ -18,5 +20,8 @@ dependencies {
     testCompile group: 'io.cucumber', name: 'cucumber-core', version:  '4.8.0'
     testCompile group: 'io.cucumber', name: 'cucumber-java', version:  '4.8.0'
     testCompile group: 'io.cucumber', name: 'cucumber-junit', version:  '4.8.0'
+
+    testCompile group: 'io.qameta.allure', name: 'allure-junit4', version: '2.13.2'
+
 
 }

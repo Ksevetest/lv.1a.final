@@ -24,10 +24,10 @@ public class ShoppingCart extends Common {
     private By agreement = By.cssSelector("#accept_purchase_agreement");
 
     // Delivery and payment way
-    private By deliveryType = By.cssSelector("article:nth-child(7)");
+    private By deliveryType = By.cssSelector("#available_delivery_types_container  article:nth-child(1)");
     private By deliveryContainer = By.cssSelector(".form-cols.predefined-delivery-address-container");
-    private By paymentType = By.cssSelector("a[payment_type='CASH_INDIVIDUAL_PERSON']");
-    private By paymentTab = By.cssSelector(".payment-type-tab");
+    private By paymentType = By.cssSelector("a[payment_type='TRANSFER_INDIVIDUAL_PERSON']");
+    private By paymentTab = By.cssSelector("#transfer_individual_person.payment-type-tab");
 
     // Order summary validation
     private By productNameCheck = By.cssSelector(".ait-cart-item-info>h4>a");
@@ -37,6 +37,7 @@ public class ShoppingCart extends Common {
 
     public void checkOutWithoutUser() {
         driver.findElement(forwardButton).click();
+        waitUntil(skipButton);
         driver.findElement(skipButton).click();
     }
 
@@ -48,6 +49,7 @@ public class ShoppingCart extends Common {
     }
 
     public void customerData() {
+        waitUntil(firstName);
         driver.findElement(firstName).sendKeys(customer.getFirstName());
         driver.findElement(lastName).sendKeys(customer.getLastName());
         driver.findElement(email).sendKeys(customer.getEmail());
@@ -65,8 +67,13 @@ public class ShoppingCart extends Common {
     }
 
     public void payOption() {
+        waitUntil(paymentType);
         driver.findElement(paymentType).click();
         waitUntil(paymentTab);
+        waitForClick(communication);
+        driver.findElement(communication).click();
+        waitForClick(doNotEmailMe);
+        driver.findElement(doNotEmailMe).click();
         driver.findElement(forwardButton).click();
     }
 
