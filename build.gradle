@@ -21,7 +21,6 @@ dependencies {
     testCompile group: 'io.cucumber', name: 'cucumber-java', version:  '4.8.0'
     testCompile group: 'io.cucumber', name: 'cucumber-junit', version:  '4.8.0'
 
-    testCompile group: 'io.qameta.allure', name: 'allure-junit4', version: '2.13.2'
-
+    compile group: 'io.qameta.allure', name: 'allure-gradle', version: '2.5'
 
 }
