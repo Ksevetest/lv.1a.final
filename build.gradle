@@ -21,6 +21,10 @@ dependencies {
     testCompile group: 'io.cucumber', name: 'cucumber-java', version:  '4.8.0'
     testCompile group: 'io.cucumber', name: 'cucumber-junit', version:  '4.8.0'
 
-    compile group: 'io.qameta.allure', name: 'allure-gradle', version: '2.5'
-
+    compile group: 'io.qameta.allure', name: 'allure-cucumber4-jvm', version: '2.13.2'
 }
+
+task generateAllureReport(type: Exec) {
+    commandLine 'allure','generate','build/allure-results','--clean','-o','allure-report'
+}
+
