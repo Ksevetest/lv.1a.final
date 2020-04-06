@@ -31,3 +31,4 @@ build
 /.idea/
 # Project exclude paths
 /out/
+/allure-results/
