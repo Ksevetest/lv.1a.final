@@ -32,3 +32,4 @@ build
 # Project exclude paths
 /out/
 /allure-results/
+/src/main/resources/chromedriver

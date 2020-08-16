@@ -9,31 +9,31 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class ShoppingCart extends Common {
 
     // Buttons
-    private By forwardButton = By.cssSelector(".order-form-forward-button");
-    private By skipButton = By.cssSelector(".btn-v2");
+    private By forwardButton = By.cssSelector(".order-form-forward-button"),
+            skipButton = By.cssSelector(".btn-v2");
 
     // Customer
-    private By firstName = By.cssSelector("#order_main_data_name");
-    private By lastName = By.cssSelector("#order_main_data_surname");
-    private By email = By.cssSelector("#order_main_data_email");
-    private By phone = By.cssSelector("#order_main_data_contact_phone_number");
+    private By firstName = By.cssSelector("#order_main_data_name"),
+            lastName = By.cssSelector("#order_main_data_surname"),
+            email = By.cssSelector("#order_main_data_email"),
+            phone = By.cssSelector("#order_main_data_contact_phone_number");
 
     // Communication and agreements
-    private By communication = By.cssSelector(".ui-button-icon");
-    private By doNotEmailMe = By.cssSelector("#ui-id-2");
-    private By agreement = By.cssSelector("#accept_purchase_agreement");
+    private By communication = By.cssSelector(".ui-button-icon"),
+            doNotEmailMe = By.cssSelector("#ui-id-2"),
+            agreement = By.cssSelector("#accept_purchase_agreement");
 
     // Delivery and payment way
-    private By deliveryType = By.cssSelector("#available_delivery_types_container  article:nth-child(1)");
-    private By deliveryContainer = By.cssSelector(".form-cols.predefined-delivery-address-container");
-    private By paymentType = By.cssSelector("a[payment_type='TRANSFER_INDIVIDUAL_PERSON']");
-    private By paymentTab = By.cssSelector("#transfer_individual_person.payment-type-tab");
+    private By deliveryType = By.cssSelector("#available_delivery_types_container  article:nth-child(1)"),
+            deliveryContainer = By.cssSelector(".form-cols.predefined-delivery-address-container"),
+            paymentType = By.cssSelector("a[payment_type='TRANSFER_INDIVIDUAL_PERSON']"),
+            paymentTab = By.cssSelector("#transfer_individual_person.payment-type-tab");
 
     // Order summary validation
-    private By productNameCheck = By.cssSelector(".ait-cart-item-info>h4>a");
-    private By confirmationPrice = By.cssSelector("div:nth-child(1) > span.ait-cart-total-count");
-    private By deliveryPrice = By.cssSelector("div:nth-child(2) > span.ait-cart-total-count");
-    private By clientData = By.cssSelector(".col-1 > p");
+    private By productNameCheck = By.cssSelector(".ait-cart-item-info>h4>a"),
+            confirmationPrice = By.cssSelector("div:nth-child(1) > span.ait-cart-total-count"),
+            deliveryPrice = By.cssSelector("div:nth-child(2) > span.ait-cart-total-count"),
+            clientData = By.cssSelector(".col-1 > p");
 
     public void checkOutWithoutUser() {
         driver.findElement(forwardButton).click();
