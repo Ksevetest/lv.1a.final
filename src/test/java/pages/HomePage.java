@@ -9,8 +9,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class HomePage extends Common {
 
-    private By cookies = By.cssSelector(".c-button-inverse");
-    private By searchBar = By.cssSelector("#search_products_text_field");
+    protected By cookies = By.cssSelector(".c-button-inverse"),
+            searchBar = By.cssSelector("#q.sn-suggest-input");
 
     public void webPage(String website) {
         driver.get(website);
@@ -24,6 +24,8 @@ public class HomePage extends Common {
     }
 
     public void searchProduct(String product) {
+//        driver.findElement(searchBar).click();
+        waitForClick(searchBar);
         driver.findElement(searchBar).sendKeys(product);
         driver.findElement(searchBar).submit();
     }

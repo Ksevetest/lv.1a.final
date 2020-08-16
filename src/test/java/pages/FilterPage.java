@@ -7,13 +7,13 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class FilterPage extends Common {
 
-    private By queryResult = By.cssSelector(".ait-search-query");
-    private By itemList = By.cssSelector(".ait-search-categories-content > div > div:nth-child(1) > ul > li:nth-child(1)");
-    private By brandList = By.cssSelector(".filter-data > div:nth-child(4)");
-    private By brandName = By.cssSelector("div.row>label[for='s62086']");
-    private By loader = By.cssSelector("#loader");
-    private By productSortList = By.cssSelector(".select-add-info");
-    private By mostStars = By.cssSelector(".drop-list li[rel='4']");
+    protected By queryResult = By.cssSelector(".ait-search-query"),
+            itemList = By.cssSelector(".ait-search-categories-content > div > div:nth-child(1) > ul > li:nth-child(1)"),
+            brandList = By.cssSelector(".filter-data > div:nth-child(4)"),
+            brandName = By.cssSelector("div.row>label[for='s62086']"),
+            loader = By.cssSelector("#loader"),
+            productSortList = By.cssSelector(".select-add-info"),
+            mostStars = By.cssSelector(".drop-list li[rel='4']");
 
     public void checkQueryResult(String tag) {
         closePopup();
@@ -38,7 +38,7 @@ public class FilterPage extends Common {
         waitForInvisibilityOfElement(loader);
     }
 
-    public  void selectBestRated (){
+    public void selectBestRated() {
         driver.findElement(By.cssSelector(".product-grid > section:nth-child(" + 1 + ") .p-image")).click();
     }
 }

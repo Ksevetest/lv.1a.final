@@ -18,7 +18,7 @@ public class Hooks extends Common {
 
     @After(value = "@Chrome")
     public void stopChrome() {
-        stopBrowser();
+//        stopBrowser();
     }
 
     @After(value = "@ChromeHeadless")

@@ -7,10 +7,10 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class ProductPage extends Common {
 
-    private By addToCard = By.cssSelector(".btn-cart");
-    private By productInCart = By.cssSelector(".product-is-in-cart");
-    private By productName = By.cssSelector(".product-main-info>h1");
-    private By productPrice = By.cssSelector(".price-v2");
+    protected By addToCard = By.cssSelector(".btn-cart"),
+            productInCart = By.cssSelector(".product-is-in-cart"),
+            productName = By.cssSelector(".product-main-info>h1"),
+            productPrice = By.cssSelector(".price-v2");
 
     public void setProductName() {
         String nameString = driver.findElement(productName).getText();

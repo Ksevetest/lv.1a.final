@@ -9,28 +9,28 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class ShoppingCart extends Common {
 
     // Buttons
-    private By forwardButton = By.cssSelector(".order-form-forward-button"),
+    protected By forwardButton = By.cssSelector(".order-form-forward-button"),
             skipButton = By.cssSelector(".btn-v2");
 
     // Customer
-    private By firstName = By.cssSelector("#order_main_data_name"),
+    protected By firstName = By.cssSelector("#order_main_data_name"),
             lastName = By.cssSelector("#order_main_data_surname"),
             email = By.cssSelector("#order_main_data_email"),
             phone = By.cssSelector("#order_main_data_contact_phone_number");
 
     // Communication and agreements
-    private By communication = By.cssSelector(".ui-button-icon"),
+    protected By communication = By.cssSelector(".ui-button-icon"),
             doNotEmailMe = By.cssSelector("#ui-id-2"),
             agreement = By.cssSelector("#accept_purchase_agreement");
 
     // Delivery and payment way
-    private By deliveryType = By.cssSelector("#available_delivery_types_container  article:nth-child(1)"),
+    protected By deliveryType = By.cssSelector("#available_delivery_types_container  article:nth-child(1)"),
             deliveryContainer = By.cssSelector(".form-cols.predefined-delivery-address-container"),
             paymentType = By.cssSelector("a[payment_type='TRANSFER_INDIVIDUAL_PERSON']"),
             paymentTab = By.cssSelector("#transfer_individual_person.payment-type-tab");
 
     // Order summary validation
-    private By productNameCheck = By.cssSelector(".ait-cart-item-info>h4>a"),
+    protected By productNameCheck = By.cssSelector(".ait-cart-item-info>h4>a"),
             confirmationPrice = By.cssSelector("div:nth-child(1) > span.ait-cart-total-count"),
             deliveryPrice = By.cssSelector("div:nth-child(2) > span.ait-cart-total-count"),
             clientData = By.cssSelector(".col-1 > p");

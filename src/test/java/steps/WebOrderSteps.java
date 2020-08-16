@@ -11,10 +11,10 @@ import pages.ShoppingCart;
 
 public class WebOrderSteps {
 
-    private HomePage homePage = new HomePage();
-    private FilterPage filterPage = new FilterPage();
-    private ProductPage productPage = new ProductPage();
-    private ShoppingCart shoppingCart = new ShoppingCart();
+    protected HomePage homePage = new HomePage();
+    protected FilterPage filterPage = new FilterPage();
+    protected ProductPage productPage = new ProductPage();
+    protected ShoppingCart shoppingCart = new ShoppingCart();
 
     @Given("client opens (.*) website")
     public void clientOpensWebsite(String website) {
