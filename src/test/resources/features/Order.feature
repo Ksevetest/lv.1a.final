@@ -5,8 +5,7 @@ Feature: Testing product search and order
   @Shoptest  @Chrome
   Scenario: 1a.lv order test
     Given client opens https://www.1a.lv website
-    When client makes search by text:Putekļu sūcēji
-    And sees 'Putekļu sūcēji' searching results
+    When client makes search by text:Putekļu sūcēji roboti
     And sets up new filter
     And adds most stared product in shopping cart
     And goes to delivery page

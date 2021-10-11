@@ -1,6 +1,5 @@
 package pages;
 
-
 import pages.common.Common;
 import org.openqa.selenium.By;
 
@@ -10,7 +9,9 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class HomePage extends Common {
 
     private By cookies = By.cssSelector(".c-button-inverse");
-    private By searchBar = By.cssSelector("#search_products_text_field");
+    private By searchBar = By.cssSelector("#top-search-form");
+    private By searchSubmit = By.cssSelector(".main-search__submit");
+//    private By searchBar = By.cssSelector(".main-search__input");
 
     public void webPage(String website) {
         driver.get(website);
@@ -24,7 +25,7 @@ public class HomePage extends Common {
     }
 
     public void searchProduct(String product) {
-        driver.findElement(searchBar).sendKeys(product);
-        driver.findElement(searchBar).submit();
+        sendKeysAction(searchBar,product);
+        driver.findElement(searchSubmit).submit();
     }
 }

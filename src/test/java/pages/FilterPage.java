@@ -7,25 +7,21 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class FilterPage extends Common {
 
-    private By queryResult = By.cssSelector(".ait-search-query");
-    private By itemList = By.cssSelector(".ait-search-categories-content > div > div:nth-child(1) > ul > li:nth-child(1)");
+    private By searchList = By.cssSelector(".sn-search-header div:nth-child(1)");
     private By brandList = By.cssSelector(".filter-data > div:nth-child(4)");
     private By brandName = By.cssSelector("div.row>label[for='s62086']");
     private By loader = By.cssSelector("#loader");
     private By productSortList = By.cssSelector(".select-add-info");
     private By mostStars = By.cssSelector(".drop-list li[rel='4']");
 
-    public void checkQueryResult(String tag) {
+    public void closeAdvertisement() {
         closePopup();
         closeBottomBar();
-        waitUntil(queryResult);
-        assertThat(driver.findElement(queryResult).getText()).isEqualToIgnoringCase("Meklēšanas rezultāti: " + tag);
     }
 
     public void pickBrand() {
-        driver.findElement(itemList).click();
-        closePopup();
-        closeBottomBar();
+//        driver.findElement(searchList).click();
+        closeAdvertisement();
         driver.findElement(brandList).click();
         clickOnHiddenElement(brandName);
         waitForInvisibilityOfElement(loader);
