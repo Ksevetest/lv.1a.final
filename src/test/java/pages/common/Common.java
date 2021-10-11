@@ -7,6 +7,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -24,7 +25,7 @@ public class Common {
     private By bottomBar = By.cssSelector(".mt-promo-bar iframe");
 
     protected void startBrowser() {
-        String driverPath = "/Users/vulros/Documents/FinalProject/src/main/resources/";
+        String driverPath = "src/test/resources/";
         System.setProperty("webdriver.chrome.driver", driverPath + "chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--disable-notifications");
@@ -71,6 +72,12 @@ public class Common {
         js.executeScript("arguments[0].click();", brand);
     }
 
+    protected void sendKeysAction (By element, String product){
+        WebElement searchText = driver.findElement(element);
+        Actions performAct = new Actions(driver);
+        performAct.sendKeys(searchText, product).build().perform();
+    }
+
     public void closePopup() {
         try {
             waitUntil(popUp);
@@ -94,5 +101,4 @@ public class Common {
         }
         driver.switchTo().parentFrame();
     }
-
 }

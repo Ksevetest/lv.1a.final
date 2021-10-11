@@ -19,8 +19,6 @@ public class WebOrderSteps {
     @Given("client opens (.*) website")
     public void clientOpensWebsite(String website) {
         homePage.webPage(website);
-        homePage.closeBottomBar();
-        homePage.closePopup();
         homePage.setCookies();
     }
 
@@ -29,16 +27,12 @@ public class WebOrderSteps {
         homePage.searchProduct(product);
     }
 
-    @And("sees '(.*)' searching results")
-    public void clientIsRedirectedOnFilterPage(String tag) {
-        filterPage.closeBottomBar();
-        filterPage.closePopup();
-        filterPage.checkQueryResult(tag);
-    }
-
     @And("sets up new filter")
     public void clientSetsUpNewFilter() {
         filterPage.pickBrand();
+        filterPage.closeBottomBar();
+        filterPage.closePopup();
+        filterPage.closeAdvertisement();
     }
 
     @And("adds most stared product in shopping cart")
